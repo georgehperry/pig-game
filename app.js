@@ -37,7 +37,7 @@ function resetGame() {
     current.innerHTML = 0;
   });
   currentScoreValue = 0;
-  dice.src = 'dice-1.png';
+  dice.src = './images/dice-1.png';
 
   player0.classList.add('active');
   player1.classList.remove('active');
@@ -52,24 +52,24 @@ function rollDice() {
   dice.style.display = 'block';
 
   if (value === 1) {
-    dice.src = 'dice-1.png';
+    dice.src = './images/dice-1.png';
     switchPlayer();
   } else {
     switch(value) {
       case 2:
-        dice.src = 'dice-2.png';
+        dice.src = './images/dice-2.png';
         break;
       case 3:
-        dice.src = 'dice-3.png';
+        dice.src = './images/dice-3.png';
         break;
       case 4:
-        dice.src = 'dice-4.png';
+        dice.src = './images/dice-4.png';
         break;
       case 5:
-        dice.src = 'dice-5.png';
+        dice.src = './images/dice-5.png';
         break;
       case 6:
-        dice.src = 'dice-6.png';
+        dice.src = './images/dice-6.png';
     }
 
     currentScoreValue += value;

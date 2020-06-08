@@ -70,15 +70,6 @@ button {
   color: #EB4D4C;
   font-size: 1.5rem;
   font-weight: 600;
-  transition: transform 500ms;
-  transform-origin: left;
-}
-button:hover {
-  cursor: pointer;
-  transform: scale(1.2) translate(-50%);
-}
-button:focus {
-  outline: 0;
 }
 button i {
   padding-right: 10px;
@@ -87,15 +78,21 @@ button i {
 .dice, button {
   position: absolute;
   left: 50%;
+  transition: transform 500ms;
+  transform-origin: left;
   transform: translate(-50%);
+}
+.dice:hover, button:hover {
+  cursor: pointer;
+  transform: scale(1.2) translate(-50%);
+}
+.dice:focus, button:focus {
+  outline: 0;
 }
 
 .dice {
   top: 34%;
   width: 100px;
-}
-.dice:hover {
-  cursor: pointer;
 }
 
 .btn-new {
@@ -148,4 +145,4 @@ path {
   }
 }
 
-/*# sourceMappingURL=style-new.css.map */
+/*# sourceMappingURL=style.css.map */
