@@ -30,6 +30,9 @@ function resetGame() {
   let scores = document.getElementsByClassName('player-score');
   let currentScores = document.getElementsByClassName('player-current-score');
 
+  document.getElementsByClassName('player-name')[0].innerHTML = 'Player 1';
+  document.getElementsByClassName('player-name')[1].innerHTML = 'Player 2';
+
   Array.prototype.forEach.call(scores, function(score) {
     score.innerHTML = 0;
   });
