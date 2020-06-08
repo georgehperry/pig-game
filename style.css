@@ -1,0 +1,151 @@
+body {
+  font-family: Lato;
+  background-image: linear-gradient(24deg, #ffffff, #fed092, #00d4ff);
+  height: 100vh;
+}
+
+.wrapper {
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f4f4f4;
+}
+
+.players {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 500px;
+}
+.players > div {
+  position: relative;
+  grid-template-rows: 2fr 1fr 4fr;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: background-color 400ms linear;
+}
+.players > div .player-name, .players > div .player-current-box {
+  align-self: end;
+}
+.players > div .player-name {
+  font-size: 3rem;
+}
+.players > div .player-current-label {
+  font-size: 2rem;
+}
+.players > div .player-score {
+  font-size: 2rem;
+}
+.players > div .player-current-box {
+  border: 1px solid #f4f4f4;
+  padding: 10px 20px;
+  margin-bottom: 2rem;
+}
+.players > div .player-current-score {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.active {
+  background-color: #f0dbff;
+}
+
+.player-0-panel.active .player-current-box {
+  border-color: #FF0066;
+}
+
+.player-1-panel.active .player-current-box {
+  border-color: #08BDBA;
+}
+
+button {
+  font-family: Lato;
+  background-color: transparent;
+  border: 0;
+  color: #EB4D4C;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: transform 500ms;
+  transform-origin: left;
+}
+button:hover {
+  cursor: pointer;
+  transform: scale(1.2) translate(-50%);
+}
+button:focus {
+  outline: 0;
+}
+button i {
+  padding-right: 10px;
+}
+
+.dice, button {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.dice {
+  top: 34%;
+  width: 100px;
+}
+.dice:hover {
+  cursor: pointer;
+}
+
+.btn-new {
+  top: 12%;
+}
+
+.btn-hold {
+  top: 90%;
+}
+
+.btn-roll {
+  top: 78%;
+}
+
+svg {
+  display: none;
+}
+svg path {
+  fill-opacity: 1;
+}
+
+.active > svg {
+  display: block;
+  position: absolute;
+  top: 45%;
+  width: 125px;
+  height: 125px;
+}
+.active > svg path {
+  fill-opacity: 0;
+}
+
+.player-0-panel svg {
+  left: 37%;
+}
+
+.player-1-panel svg {
+  right: 37%;
+}
+
+path {
+  stroke-dasharray: 80;
+  animation: dash 5s linear infinite;
+  transition: fill-opacity 500ms;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 800;
+  }
+}
+
+/*# sourceMappingURL=style-new.css.map */
