@@ -77,6 +77,28 @@ button {
     padding-right: 10px;
   }
 }
+.goal-score-container {
+  width: 160px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transition: transform 500ms;
+  transform-origin: left;
+  transform: translate(-50%);
+
+  .goal-score-input {
+    padding: 0.6rem;
+    margin-bottom: 0.5rem;
+
+    &:focus {
+      outline-color: #EFDCFE;
+    }
+  }
+  > div {
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
 .dice, button {
   position: absolute;
   left: 50%;
@@ -93,11 +115,11 @@ button {
   }
 }
 .dice {
-  top: 34%;
+  top: 45%;
   width: 100px;
 }
 .btn-new {
-  top: 12%;
+  top: 30%;
 }
 .btn-hold {
   top: 90%;

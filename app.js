@@ -9,6 +9,8 @@ GAME RULES:
 - The first player to reach 100 points on GLOBAL score wins the game
 
 */
+const goalScoreInput = document.getElementsByClassName('goal-score-input')[0];
+let goalScore = 100;
 const newGame = document.getElementsByClassName('btn-new')[0];
 const roll = document.getElementsByClassName('btn-roll')[0];
 const hold = document.getElementsByClassName('btn-hold')[0];
@@ -21,10 +23,17 @@ let currentScoreValue = parseInt(currentScoreHTML.innerHTML);
 
 let dice = document.getElementsByClassName('dice')[0];
 
+goalScoreInput.addEventListener('input', setGoalScore);
 newGame.addEventListener('click', resetGame);
 roll.addEventListener('click', rollDice);
 dice.addEventListener('click', rollDice);
 hold.addEventListener('click', holdHand);
+
+function setGoalScore() {
+  const goalScoreStatement = document.querySelector('.goal-score-container > div > span');
+  goalScoreStatement.innerHTML = goalScoreInput.value;
+  goalScore = goalScoreInput.value;
+}
 
 function resetGame() {
   let scores = document.getElementsByClassName('player-score');
@@ -90,7 +99,7 @@ function holdHand() {
   currentScoreHTML.innerHTML = 0;
   currentScoreValue = 0;
 
-  if (currentPlayerScoreValue > 99) {
+  if (currentPlayerScoreValue > goalScore - 1) {
     document.querySelector('.active .player-name').innerHTML = 'WINNER';
     document.querySelector('.active').classList.add('winner');
   } else {
